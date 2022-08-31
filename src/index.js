@@ -1,3 +1,8 @@
-export const a = 100
+import { initMixin } from "./init"
 
-export default {a:1}
+function Vue(options) {
+    this._init(options)
+}
+
+initMixin(Vue); //扩展了Init方法
+export default Vue

@@ -7,7 +7,7 @@ export default {
     output: {
         file: './dist/vue.js',
         name: 'Vue',
-        format: 'umd', // esm es6 commonjs iife umd
+        format: 'umd', // esm es6 commonjs iife umd (umd支持commonJs和amd)
         sourcemap: true, //希望可以调试源代码
     },
     plugins:[
