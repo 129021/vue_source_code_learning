@@ -19,11 +19,30 @@
             data() { //代理数据
                 return {
                     name: 'wjq',
-                    age: 25
+                    age: 25,
+                    address: {
+                        content: '百京',
+                        num: 100083
+                    },
+
+                    // 数组
+                    // 修改数组，很少用索引（比如hobby[0])来修改，但是数组可能很长，劫持数组的属性会将数组的每个属性都遍历一遍，极大的浪费性能
+                    // 用户一般通过数组的方法（比如push,shift等等）来修改数组
+                    // 所以如果对象里面有数组的话，就不要用循环遍历的方式来劫持数组的属性了，改用其他方法
+                    hobby: ['drink', 'eat', {
+                        play: 'basketball'
+                    }]
                 }
 
             }
         })
+
+
+        // vm.name = 'ok' //修改触发set
+        // console.log(vm); //取值触发get
+
+        vm.hobby.push('sing')
+        // vm.hobby[2].play
     </script>
 </body>
 
